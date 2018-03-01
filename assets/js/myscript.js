@@ -103,6 +103,17 @@ var customScript = function(){
 		});
 	}
 
+	/* radioBtn */
+	var radioBtn = function(){
+		$('._radio_btn').click(function(e){
+			e.preventDefault();
+			var group = $(this).attr('data-radio');
+			console.log(group);
+			$('*[data-radio='+group+']').removeClass('act');
+			$(this).addClass('act');
+		});
+	}
+
 	/* fileOpen */
 	var fileOpen = function(){
 		$('._file_open').click(function(){
@@ -124,6 +135,7 @@ var customScript = function(){
 	}
 
 	$(document).ready(function(){
+		radioBtn();
 		faq();	
 		fileOpen();
 		mobileMenuToggle();
